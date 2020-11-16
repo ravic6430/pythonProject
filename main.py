@@ -7,14 +7,10 @@ def query_with_fetchone():
         conn = MySQLConnection(**dbconfig)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM wp_users")
-
         row = cursor.fetchone()
 
         while row is not None:
-            #print(row)
-
             print("{0} {1} {2}".format(row[0], row[1], row[2]))
-
             row = cursor.fetchone()
 
     except Error as e:
